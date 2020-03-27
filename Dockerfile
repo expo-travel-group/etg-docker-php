@@ -23,6 +23,10 @@ RUN apk add --update --no-cache php-xsl
 RUN apk add --update --no-cache php-ldap
 RUN apk add --update --no-cache php-curl
 RUN apk add --update --no-cache php-mbstring
+RUN apk add --update --no-cache php-json
+RUN apk add --update --no-cache php-phar
+
+RUN ln -s /usr/bin/php7 /usr/local/bin/php
 
 # SSH
 ARG SSH_DIR="/etc/ssh"
@@ -30,7 +34,7 @@ ARG SSH_CONFIG="/etc/ssh/config"
 
 USER root
 
-RUN apk --update --no-cache add sshpass openssh-client bash git
+RUN apk --update --no-cache add curl sshpass openssh-client bash git
 RUN set -xe \
     && mkdir -p $SSH_DIR \
 	&& echo -e "Host *\n\tStrictHostKeyChecking=no\n\n" >> $SSH_CONFIG
