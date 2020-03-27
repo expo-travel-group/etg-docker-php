@@ -1,7 +1,7 @@
 FROM php:7.3-alpine
 
 RUN docker-php-source extract \
-    && docker-php-ext-install zip apcu bcmath gd memcached mysqli mysqli ldap \
+    && docker-php-ext-install zip bcmath gd memcached mysqli mysqli ldap \
     && docker-php-source delete
 
 ARG SSH_DIR="/etc/ssh"
