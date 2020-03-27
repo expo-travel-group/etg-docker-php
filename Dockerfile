@@ -22,7 +22,6 @@ RUN apk add --update --no-cache php-mysqli
 RUN apk add --update --no-cache php-xsl
 RUN apk add --update --no-cache php-ldap
 RUN apk add --update --no-cache php-curl
-RUN apk add --update --no-cache php-mcrypt
 RUN apk add --update --no-cache php-mbstring
 
 # SSH
