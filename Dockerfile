@@ -13,18 +13,7 @@ RUN apk --update --no-cache add ca-certificates
 RUN echo "https://dl.bintray.com/php-alpine/v3.9/php-7.3" >> /etc/apk/repositories
 
 # install php and some extensions
-RUN apk add --update --no-cache php
-RUN apk add --update --no-cache php-zip
-RUN apk add --update --no-cache php-bcmath
-RUN apk add --update --no-cache php-gd
-RUN apk add --update --no-cache php-memcached
-RUN apk add --update --no-cache php-mysqli
-RUN apk add --update --no-cache php-xsl
-RUN apk add --update --no-cache php-ldap
-RUN apk add --update --no-cache php-curl
-RUN apk add --update --no-cache php-mbstring
-RUN apk add --update --no-cache php-json
-RUN apk add --update --no-cache php-phar
+RUN apk add --update --no-cache php php-zip php-bcmath php-gd php-memcached php-mysqli php-xsl php-ldap php-curl php-mbstring php-json php-phar php-sqlite3 php-pdo php-ctype
 
 RUN ln -s /usr/bin/php7 /usr/local/bin/php
 
