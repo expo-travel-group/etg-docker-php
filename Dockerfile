@@ -16,7 +16,7 @@ RUN echo "https://dl.bintray.com/php-alpine/v3.9/php-7.3" >> /etc/apk/repositori
 RUN apk add --update --no-cache php php-zip php-bcmath php-gd php-memcached php-mysqli php-xsl php-ldap php-curl php-mbstring php-json php-phar php-sqlite3 php-pdo php-ctype php-apcu php-xdebug
 
 # increase PHP memory limit
-RUN echo "memory_limit=512" >> /etc/php7/conf.d/memory_limit.ini
+RUN echo "memory_limit=512M" >> /etc/php7/conf.d/memory_limit.ini
 
 RUN ln -s /usr/bin/php7 /usr/local/bin/php
 
